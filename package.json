@@ -1,0 +1,23 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node -r esbuild-register run.ts",
+    "deply-getAllTodos": "lambda-build upload getAllTodos -e DynamoDB/functions/getAllTodos.ts -r eu-west-2",
+    "deply-addTodo": "lambda-build upload addTodo -e DynamoDB/functions/postTodo.ts -r eu-west-2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.121.0",
+    "@aws-sdk/lib-dynamodb": "^3.121.0",
+    "@types/aws-lambda": "^8.10.101",
+    "@types/node": "^18.0.3",
+    "esbuild-register": "^3.3.3",
+    "uid": "^2.0.0"
+  }
+}
